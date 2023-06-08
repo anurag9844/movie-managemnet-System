@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h1>currently login user : {{request.user.username}}</h1>
+
+<h2>Movie List</h2>
+
+<table>
+  <tr>
+    <th>Movie</th>
+    <th>Actor</th>
+    <th>Producer</th>
+  </tr>
+  {% for movie in movies %}
+  <tr>
+    <td>{{movie.name}}</td>
+    <td>{{movie.actors}}</td>
+    <td>{{movie.producer}}</td>
+  </tr>
+  {% endfor %}
+  
+</table>
+
+
+<h2>Movie Booking List</h2>
+
+<table>
+  <tr>
+    <th>Movie Name</th>
+    <th>User Name</th>
+  </tr>
+  {% for movie in moviebooking %}
+  <tr>
+    <td>{{movie.movie_name}}</td>
+    <td>{{movie.user_id}}</td>
+  </tr>
+  {% endfor %}
+  
+</table>
+
+</body>
+</html>
+
